@@ -1,73 +1,185 @@
-# React + TypeScript + Vite
+# 🚀 LeadScope — Smart Lead Intelligence
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+LeadScope is a full-stack web app that helps you find **high-quality local business leads** for cold calling.
 
-Currently, two official plugins are available:
+It identifies businesses without websites, scores them, and gives you a simple CRM to track outreach.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎯 What This Solves
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Most local businesses:
 
-## Expanding the ESLint configuration
+* Don’t have websites
+* Don’t get traffic from Google
+* Are easy clients for web services
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+LeadScope helps you find them fast.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🔥 Core Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🔍 Lead Search
+
+* Search by area + category
+* Built using HERE Places API
+
+### 🧠 Lead Scoring
+
+Automatically ranks leads:
+
+* +50 → No website
+* +30 → Has phone
+* +20 → Rating ≥ 4
+* +10 → Reviews ≥ 50
+
+---
+
+### 🏷 Lead Categories
+
+* 🔥 **HOT LEAD** (80+)
+* ✅ **GOOD LEAD** (50–79)
+* ❌ **LOW VALUE** (<50)
+
+---
+
+### 🎯 Smart Filtering
+
+* No website only
+* Relevant businesses (cafes, salons, gyms, clinics)
+* Call status tracking
+
+---
+
+### 📊 Built-in CRM
+
+Track your outreach:
+
+* Not Called
+* Called
+* Interested
+* Not Interested
+
+---
+
+### 📤 CSV Export
+
+Export leads with:
+
+* Name
+* Phone
+* Address
+* Score
+* Lead Tier
+
+---
+
+### 🔎 Quick Google Check
+
+One-click verify business quality
+
+---
+
+## 🧱 Tech Stack
+
+**Frontend**
+
+* React (Vite)
+* TypeScript
+
+**Backend**
+
+* Vercel Serverless Functions
+
+**Database**
+
+* Supabase
+
+---
+
+## ⚙️ Setup (Local)
+
+### 1. Install dependencies
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 2. Create `.env`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env
+SUPABASE_URL=your_project_url
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+SUPABASE_ANON_KEY=your_public_key
+HERE_API_KEY=your_here_api_key
 ```
+
+---
+
+### 3. Run project
+
+```bash
+npx vercel dev
+```
+
+---
+
+### 4. Open
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🧪 API Health Check
+
+```
+http://localhost:3000/api/health
+```
+
+---
+
+## ⚠️ Limitations
+
+* Data may be incomplete (API limitations)
+* Requires manual validation before calling
+* Not all businesses have phone numbers
+
+---
+
+## 📞 How to Use (Real Workflow)
+
+1. Search area (e.g. "cafes in Indore")
+2. Filter HOT LEADS
+3. Export CSV
+4. Call businesses
+
+---
+
+## 💬 Cold Call Opening
+
+> "Hi, I found your business online and noticed you don’t have a proper website — are you getting customers from Google or mostly offline?"
+
+---
+
+## 🚀 Goal
+
+This tool is built to:
+👉 Help you get clients
+👉 Not just build another project
+
+---
+
+## 🧠 Author
+
+Built by a developer solving his own client acquisition problem.
+
+---
+
+## ⭐ If useful
+
+Star it or use it to land your first client.
