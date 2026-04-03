@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  --color-bg: #060a11;
+  --color-bg-card: #0c1220;
+  --color-bg-elevated: #131c2e;
+  --color-bg-hover: #182438;
+  --color-border: #1a2744;
+  --color-border-focus: #3b82f6;
+  
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+  
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+  --color-accent-glow: rgba(59, 130, 246, 0.15);
+  
+  --color-hot: #ef4444;
+  --color-hot-bg: rgba(239, 68, 68, 0.10);
+  --color-good: #10b981;
+  --color-good-bg: rgba(16, 185, 129, 0.10);
+  --color-lowval: #6b7280;
+  --color-lowval-bg: rgba(107, 114, 128, 0.10);
+  
+  --color-high: #10b981;
+  --color-high-bg: rgba(16, 185, 129, 0.10);
+  --color-warn: #f59e0b;
+  --color-warn-bg: rgba(245, 158, 11, 0.10);
+  --color-low: #6b7280;
+  --color-low-bg: rgba(107, 114, 128, 0.10);
+  --color-danger: #ef4444;
+  --color-danger-bg: rgba(239, 68, 68, 0.10);
+  
+  --color-called: #8b5cf6;
+  --color-called-bg: rgba(139, 92, 246, 0.10);
+  --color-interested: #06b6d4;
+  --color-interested-bg: rgba(6, 182, 212, 0.10);
+  --color-not-interested: #f97316;
+  --color-not-interested-bg: rgba(249, 115, 22, 0.10);
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/dmsans/v15/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAkJxhTmf3.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/dmsans/v15/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAopxhTmf3.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/dmsans/v15/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwATpthTmf3.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/dmsans/v15/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAd5thTmf3.woff2') format('woff2');
+}
+
+body {
+  background-color: #060a11;
+  color: #f1f5f9;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0c1220;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a3a52;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4f6e;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #131c2e 25%, #1c2b44 50%, #131c2e 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.3); }
+  50% { box-shadow: 0 0 12px 2px rgba(239, 68, 68, 0.15); }
+}
+
+.pulse-hot {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes scoreReveal {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.score-badge {
+  animation: scoreReveal 0.3s ease-out forwards;
+}
